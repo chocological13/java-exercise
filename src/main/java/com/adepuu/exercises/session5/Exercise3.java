@@ -27,15 +27,17 @@ public class Exercise3 {
     for (int i = 0; i < arraySize; i++) {
       nums[i] = scan.nextInt();
     }
+    scan.nextLine();
+    scan.close();
 
     // Print out current array for user
     System.out.print("Your array is: " + Arrays.toString(nums));
 
     System.out.println();
-    System.out.println(dupe(nums));
+    System.out.println(isDupe(nums));
   }
 
-  public static boolean dupe(int[] arr) {
+  public static boolean isDupe(int[] arr) {
     for (int i = 0; i < arr.length; i++) {
       for (int j = i + 1; j < arr.length; j++) {
         if (arr[i] == arr[j]) {
