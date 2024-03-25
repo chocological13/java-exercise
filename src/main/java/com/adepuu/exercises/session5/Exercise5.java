@@ -38,6 +38,7 @@ public class Exercise5 {
       direction = scan.nextLine();
     }
     scan.close();
+    System.out.println();
 
     // Sort
     System.out.println("Your sorted(asc) array is: " + sort(numbers, direction));
