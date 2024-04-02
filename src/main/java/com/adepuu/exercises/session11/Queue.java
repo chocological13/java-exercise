@@ -50,7 +50,7 @@ public class Queue {
     private void enqueue(int data) {
       Node newNode = new Node(data);
 
-      if (head == tail) {
+      if (head == null) {
         head = newNode;
         tail = newNode;
       } else {
@@ -61,23 +61,25 @@ public class Queue {
     }
 
     public void dequeue() {
-      try {
-        if (isEmpty()) {
-          throw new EmptyStackException();
-        } else {
-//          Node dequeuedNode = head;
-          head = head.next;
-
-          if(head == null) {
-            tail = null;
-          }
-
-//          dequeuedNode.next = null;
-          queueSize--;
-          System.out.println("Data dequeued!");
-        }
-      } catch (EmptyStackException e) {
-        System.out.println("Queue is currently empty, nothing to dequeue!");
+//      try {
+//        if (isEmpty()) {
+//          throw new EmptyStackException();
+//        } else {
+//          head = head.next;
+//
+//          if(head == null) {
+//            tail = null;
+//          }
+//
+//          queueSize--;
+//          System.out.println("Data dequeued!");
+//        }
+//      } catch (EmptyStackException e) {
+//        System.out.println("Queue is currently empty, nothing to dequeue!");
+//      }
+      if (!isEmpty()) {
+        head = head.next;
+        queueSize--;
       }
     }
 
@@ -85,7 +87,7 @@ public class Queue {
       try {
         if (!isEmpty()) {
           System.out.println("Current queue size is: " + this.getQueueSize());
-          System.out.println("Data at the top of the queue is: " + this.head);
+          System.out.println("Data at the top of the queue is: " + head.data);
         } else {
           throw new EmptyStackException();
         }
