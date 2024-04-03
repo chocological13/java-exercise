@@ -94,25 +94,25 @@ public class Queue {
 
     // ? I can't really figure this out, apparently current.next is null
     // ? Not sure if I path it wrongly
-//    public void display() {
-//      try {
-//        if (!isEmpty()) {
-//          ArrayList<Integer> queueData = new ArrayList<>();
-//
-//          Node current = this.head;
-//          while (current != null) {
-//            queueData.add(current.data);
-//            current = current.next;
-//          }
-//
-//          System.out.println("Your current queue data is: " + queueData.toString());
-//        } else {
-//          throw new IllegalStateException();
-//        }
-//      } catch (IllegalStateException e) {
-//        System.out.println("Queue is empty :(");
-//      }
-//    }
+    public void display() {
+      try {
+        if (!isEmpty()) {
+          ArrayList<Integer> queueData = new ArrayList<>();
+
+          Node current = this.head;
+          while (current != null) {
+            queueData.add(current.data);
+            current = current.next;
+          }
+
+          System.out.println("Your current queue data is: " + queueData.toString());
+        } else {
+          throw new IllegalStateException();
+        }
+      } catch (IllegalStateException e) {
+        System.out.println("Queue is empty :(");
+      }
+    }
 
   public static void main(String[] args) {
     Queue newQueue = new Queue();
@@ -125,5 +125,6 @@ public class Queue {
     System.out.println();
     newQueue.dequeue();
     newQueue.peek();
+    newQueue.display();
   }
 }
