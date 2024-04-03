@@ -61,25 +61,21 @@ public class Queue {
     }
 
     public void dequeue() {
-//      try {
-//        if (isEmpty()) {
-//          throw new EmptyStackException();
-//        } else {
-//          head = head.next;
-//
-//          if(head == null) {
-//            tail = null;
-//          }
-//
-//          queueSize--;
-//          System.out.println("Data dequeued!");
-//        }
-//      } catch (EmptyStackException e) {
-//        System.out.println("Queue is currently empty, nothing to dequeue!");
-//      }
-      if (!isEmpty()) {
-        head = head.next;
-        queueSize--;
+      try {
+        if (isEmpty()) {
+          throw new EmptyStackException();
+        } else {
+          head = head.next;
+
+          if(head == null) {
+            tail = null;
+          }
+
+          queueSize--;
+          System.out.println("Data dequeued!");
+        }
+      } catch (EmptyStackException e) {
+        System.out.println("Queue is currently empty, nothing to dequeue!");
       }
     }
 
